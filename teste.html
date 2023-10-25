@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informações do Navegador</title>
+</head>
+<body>
+    <h1>Informações do Navegador</h1>
+    <p id="name"></p>
+    <p id="codename"></p>
+    <p id="info"></p>
+    <p id="browser"></p>
+
+    <script>
+        var q = "";
+        var w = "";
+        var e = "";
+
+        q = "Propriedade appName: " + navigator.appName;
+        document.getElementById("name").innerHTML = q;
+        w = "Propriedade appCodeName: " + navigator.appCodeName;
+        document.getElementById("codename").innerHTML = w;
+
+        e = "Propriedade userAgent: " + navigator.userAgent;
+        document.getElementById("info").innerHTML = e;
+
+        var navegadores = "";
+
+        if (navigator.userAgent.toLowerCase().indexOf('op') > -1) {
+            document.getElementById("browser").innerHTML = "Opera";
+        } else if (navigator.userAgent.indexOf('MSIE') > -1) {
+            document.getElementById("browser").innerHTML = "Internet Explorer ou Edge";
+        } else if (navigator.userAgent.indexOf('Firefox') > -1) {
+            document.getElementById("browser").innerHTML = "Mozilla Firefox";
+        } else if (navigator.userAgent.indexOf('Epiphany') > -1) {
+            document.getElementById("browser").innerHTML = "Epiphany";
+        } else if (navigator.userAgent.indexOf('Chrome') > -1) {
+            document.getElementById("browser").innerHTML = "Google Chrome";
+        } else if (navigator.userAgent.indexOf('Safari') > -1) {
+            document.getElementById("browser").innerHTML = "Safari";
+        }
+    </script>
+</body>
+</html>
